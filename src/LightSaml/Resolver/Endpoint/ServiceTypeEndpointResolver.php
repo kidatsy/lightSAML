@@ -30,13 +30,13 @@ class ServiceTypeEndpointResolver implements EndpointResolverInterface
      */
     public function resolve(CriteriaSet $criteriaSet, array $candidates)
     {
-        if (false === $criteriaSet->has(get_class(ServiceTypeCriteria))) {
+        if (false === $criteriaSet->has('LightSaml\Resolver\Endpoint\Criteria\ServiceTypeCriteria')) {
             return $candidates;
         }
 
         $result = array();
         /** @var ServiceTypeCriteria $serviceTypeCriteria */
-        foreach ($criteriaSet->get(get_class(ServiceTypeCriteria)) as $serviceTypeCriteria) {
+        foreach ($criteriaSet->get('LightSaml\Resolver\Endpoint\Criteria\ServiceTypeCriteria') as $serviceTypeCriteria) {
             foreach ($candidates as $endpointReference) {
                 $type = $serviceTypeCriteria->getServiceType();
                 if ($endpointReference->getEndpoint() instanceof $type) {

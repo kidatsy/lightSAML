@@ -65,7 +65,7 @@ class InResponseToValidatorAction extends AbstractProfileAction
             }
 
             /** @var RequestStateContext $requestStateContext */
-            $requestStateContext = $context->getInboundContext()->getSubContext(ProfileContexts::REQUEST_STATE, get_class(RequestStateContext));
+            $requestStateContext = $context->getInboundContext()->getSubContext(ProfileContexts::REQUEST_STATE, 'LightSaml\Context\Profile\RequestStateContext');
             $requestStateContext->setRequestState($requestState);
         }
     }

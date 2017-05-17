@@ -79,7 +79,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getInboundContext()
     {
-        return $this->getSubContext(ProfileContexts::INBOUND_MESSAGE, get_class(MessageContext));
+        return $this->getSubContext(ProfileContexts::INBOUND_MESSAGE, 'LightSaml\Context\Profile\MessageContext');
     }
 
     /**
@@ -87,7 +87,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getOutboundContext()
     {
-        return $this->getSubContext(ProfileContexts::OUTBOUND_MESSAGE, get_class(MessageContext));
+        return $this->getSubContext(ProfileContexts::OUTBOUND_MESSAGE, 'LightSaml\Context\Profile\MessageContext');
     }
 
     /**
@@ -95,7 +95,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getHttpRequestContext()
     {
-        return $this->getSubContext(ProfileContexts::HTTP_REQUEST, get_class(HttpRequestContext));
+        return $this->getSubContext(ProfileContexts::HTTP_REQUEST, 'LightSaml\Context\Profile\HttpRequestContext');
     }
 
     /**
@@ -103,7 +103,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getHttpResponseContext()
     {
-        return $this->getSubContext(ProfileContexts::HTTP_RESPONSE, get_class(HttpResponseContext));
+        return $this->getSubContext(ProfileContexts::HTTP_RESPONSE, 'LightSaml\Context\Profile\HttpRequestContext');
     }
 
     /**
@@ -111,7 +111,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getOwnEntityContext()
     {
-        return $this->getSubContext(ProfileContexts::OWN_ENTITY, get_class(EntityContext));
+        return $this->getSubContext(ProfileContexts::OWN_ENTITY, 'LightSaml\Context\Profile\EntityContext');
     }
 
     /**
@@ -119,7 +119,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getPartyEntityContext()
     {
-        return $this->getSubContext(ProfileContexts::PARTY_ENTITY, get_class(EntityContext));
+        return $this->getSubContext(ProfileContexts::PARTY_ENTITY, 'LightSaml\Context\Profile\EntityContext');
     }
 
     /**
@@ -127,7 +127,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getEndpointContext()
     {
-        return $this->getSubContext(ProfileContexts::ENDPOINT, get_class(EndpointContext));
+        return $this->getSubContext(ProfileContexts::ENDPOINT, 'LightSaml\Context\Profile\EndpointContext');
     }
 
     /**
@@ -135,7 +135,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getLogoutContext()
     {
-        return $this->getSubContext(ProfileContexts::LOGOUT, get_class(LogoutContext));
+        return $this->getSubContext(ProfileContexts::LOGOUT, 'LightSaml\Context\Profile\LogoutContext');
     }
 
     /**
