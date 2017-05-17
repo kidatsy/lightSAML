@@ -28,16 +28,16 @@ class MetadataFilterResolver extends AbstractQueryableResolver
      */
     public function resolve(CriteriaSet $criteriaSet, array $arrCredentials = array())
     {
-        if (false == $criteriaSet->has(MetadataCriteria::class)) {
+        if (false == $criteriaSet->has(get_class(MetadataCriteria))) {
             return $arrCredentials;
         }
 
         $result = array();
-        foreach ($criteriaSet->get(MetadataCriteria::class) as $criteria) {
+        foreach ($criteriaSet->get(get_class(MetadataCriteria)) as $criteria) {
             /* @var MetadataCriteria $criteria */
             foreach ($arrCredentials as $credential) {
                 /** @var MetadataCredentialContext $metadataContext */
-                $metadataContext = $credential->getCredentialContext()->get(MetadataCredentialContext::class);
+                $metadataContext = $credential->getCredentialContext()->get(get_class(MetadataCredentialContext));
                 if (false == $metadataContext ||
                     $criteria->getMetadataType() == MetadataCriteria::TYPE_IDP && $metadataContext->getRoleDescriptor() instanceof IdpSsoDescriptor ||
                     $criteria->getMetadataType() == MetadataCriteria::TYPE_SP && $metadataContext->getRoleDescriptor() instanceof SpSsoDescriptor

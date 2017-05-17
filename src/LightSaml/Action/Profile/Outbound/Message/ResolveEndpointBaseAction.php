@@ -156,8 +156,8 @@ abstract class ResolveEndpointBaseAction extends AbstractProfileAction
     protected function getDescriptorType(ProfileContext $context)
     {
         return $context->getOwnRole() == ProfileContext::ROLE_IDP
-            ? SpSsoDescriptor::class
-            : IdpSsoDescriptor::class;
+            ? get_class(SpSsoDescriptor)
+            : get_class(IdpSsoDescriptor);
     }
 
     /**

@@ -30,7 +30,7 @@ class SerializeOwnEntityAction extends AbstractProfileAction
         $ownEntityDescriptor = $context->getOwnEntityDescriptor();
 
         /** @var SerializationContext $serializationContext */
-        $serializationContext = $context->getSubContext(ProfileContexts::SERIALIZATION, SerializationContext::class);
+        $serializationContext = $context->getSubContext(ProfileContexts::SERIALIZATION, get_class(SerializationContext));
         $serializationContext->getDocument()->formatOutput = true;
 
         $ownEntityDescriptor->serialize($serializationContext->getDocument(), $serializationContext);

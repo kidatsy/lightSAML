@@ -18,6 +18,6 @@ class ResolveEndpointSpAcsAction extends ResolveEndpointBaseAction
 {
     protected function getServiceType(ProfileContext $context)
     {
-        return AssertionConsumerService::class;
+        return get_class(AssertionConsumerService);
     }
 }

@@ -25,12 +25,12 @@ class UsageFilterResolver extends AbstractQueryableResolver
      */
     public function resolve(CriteriaSet $criteriaSet, array $arrCredentials = array())
     {
-        if (false == $criteriaSet->has(UsageCriteria::class)) {
+        if (false == $criteriaSet->has(get_class(UsageCriteria))) {
             return $arrCredentials;
         }
 
         $result = array();
-        foreach ($criteriaSet->get(UsageCriteria::class) as $criteria) {
+        foreach ($criteriaSet->get(get_class(UsageCriteria)) as $criteria) {
             /* @var UsageCriteria $criteria */
             foreach ($arrCredentials as $credential) {
                 if (false == $credential->getUsageType() || $criteria->getUsage() == $credential->getUsageType()) {

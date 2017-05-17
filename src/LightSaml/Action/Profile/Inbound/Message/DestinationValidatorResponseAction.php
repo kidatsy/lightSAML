@@ -28,7 +28,7 @@ class DestinationValidatorResponseAction extends AbstractDestinationValidatorAct
     {
         $result = parent::getCriteriaSet($context, $location);
 
-        $result->add(new ServiceTypeCriteria(AssertionConsumerService::class));
+        $result->add(new ServiceTypeCriteria(get_class(AssertionConsumerService)));
 
         return $result;
     }

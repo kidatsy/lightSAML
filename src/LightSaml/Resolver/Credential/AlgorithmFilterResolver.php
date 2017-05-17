@@ -25,12 +25,12 @@ class AlgorithmFilterResolver extends AbstractQueryableResolver
      */
     public function resolve(CriteriaSet $criteriaSet, array $arrCredentials = array())
     {
-        if (false == $criteriaSet->has(AlgorithmCriteria::class)) {
+        if (false == $criteriaSet->has(get_class(AlgorithmCriteria))) {
             return $arrCredentials;
         }
 
         $result = array();
-        foreach ($criteriaSet->get(AlgorithmCriteria::class) as $criteria) {
+        foreach ($criteriaSet->get(get_class(AlgorithmCriteria)) as $criteria) {
             /* @var AlgorithmCriteria $criteria */
             foreach ($arrCredentials as $credential) {
                 if (($credential->getPrivateKey() && $credential->getPrivateKey()->getAlgorith() == $criteria->getAlgorithm()) ||
