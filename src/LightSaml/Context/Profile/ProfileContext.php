@@ -103,7 +103,7 @@ class ProfileContext extends AbstractProfileContext
      */
     public function getHttpResponseContext()
     {
-        return $this->getSubContext(ProfileContexts::HTTP_RESPONSE, 'LightSaml\Context\Profile\HttpRequestContext');
+        return $this->getSubContext(ProfileContexts::HTTP_RESPONSE, 'LightSaml\Context\Profile\HttpResponseContext');
     }
 
     /**
