@@ -38,7 +38,7 @@ abstract class LogHelper
      */
     public static function getActionErrorContext(ContextInterface $context, ActionInterface $action, array $extraData = null)
     {
-        return self::getContext($context, $action, $extraData, true);
+        return self::getContext($context, $action, $extraData, false);
     }
 
     /**
